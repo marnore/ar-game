@@ -173,7 +173,7 @@ public class ServerAPI : MonoBehaviour
             Debug.Log("Starting dummy location/fine request for buildingID: " + buildingID);
 
         await Task.Delay(100);
-        LocationData locationData = new LocationData(new Vector3(UnityEngine.Random.Range(-5, 5), 1.6f, UnityEngine.Random.Range(-5, 5)), Vector3.forward, Quaternion.identity);
+        LocationData locationData = new LocationData(new Vector3(-30, 1.6f, 20), Vector3.forward, Quaternion.identity);
         OnLocationResponse?.Invoke(true, locationData);
         return new Tuple<bool, LocationData>(true, locationData);
     }

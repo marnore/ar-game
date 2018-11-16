@@ -175,7 +175,7 @@ public class ARController : MonoBehaviour
         tr.position = location.position - Frame.Pose.position;
         tr.rotation = Quaternion.identity;
         tr.RotateAround(location.position, Vector3.up, worldAngle);
-
+        Debug.Log("TR position " + tr.position);
         // Update world objects
         worldController.UpdateObjects();
 

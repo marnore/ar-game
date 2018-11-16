@@ -170,7 +170,10 @@ public class WorldController : MonoBehaviour
     /**<summary> Add moving Game Equipment (ball, puck, etc.) to the world </summary>*/
     public void AddMovingGameEquipment()
     {
-        GameObject obj = raycastSpawner.Spawn(movingGameEquipmentPrefabs[UnityEngine.Random.Range(0, movingGameEquipmentPrefabs.Length)], currentArea.bounds, player.position, movingEquipmentMinDistance, 50, 0.3f, itemRoot);
+        Debug.Log("Bounds:");
+        Debug.Log(currentArea.bounds);
+        GameObject obj = raycastSpawner.Spawn(movingGameEquipmentPrefabs[UnityEngine.Random.Range(0, movingGameEquipmentPrefabs.Length)],
+         currentArea.bounds, player.position, movingEquipmentMinDistance, 50, 0.3f, itemRoot);
         obj.GetComponent<Item>().data = Instantiate(obj.GetComponent<Item>().data);
         obj.GetComponent<AI>().Initialise();
 
